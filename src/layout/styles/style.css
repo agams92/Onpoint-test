@@ -1,0 +1,452 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 1024px;
+}
+
+@font-face {
+    font-family: 'Gotham-Pro-Regular', sans-serif;
+    src: url('../fonts/GothamPro.ttf') format('ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato-Regular', sans-serif;
+    src: url('../fonts/Lato-Regular.ttf') format('ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(.2, .2);
+        opacity: 1;
+    }
+    90% {
+        transform: scale(0.9, 0.9);
+        opacity: .2;
+    }
+    to {
+        transform: scale(0.7, 0.7);
+        opacity: .2;
+    }
+}
+
+.app {
+    background: url('../images/app-bg.png') no-repeat;
+    background-size: contain;
+}
+
+.screen {
+    height: 768px;
+}
+
+.first-screen {
+    position: relative;
+}
+
+.first-screen__title {
+    padding: 136px 231px 0 72px;
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 48px;
+    color: #0d319c;
+    letter-spacing: 2.4px;
+    line-height: 1.23em;
+}
+
+.first-screen__point {
+    position: relative;
+}
+
+.first-screen__point_first {
+    top: -3.4%;
+    left: 51.5%;
+    width: 60px;
+    height: 60px;
+}
+
+.first-screen__point_second {
+    width: 35px;
+    height: 35px;
+    top: 11.8%;
+    left: 24.7%;
+}
+
+.first-screen__point_third {
+    width: 15px;
+    height: 15px;
+    top: 23.5%;
+    left: 46%;
+}
+
+.first-screen__point_fourth {
+    width: 15px;
+    height: 15px;
+    top: 18.8%;
+    right: -79.5%;
+}
+
+.first-screen__point_text {
+    position: absolute;
+    font-family: 'Lato-Regular', sans-serif;
+    color: #0d319c;
+    font-size: 20px;
+    letter-spacing: 0.1px;
+}
+
+.first-screen__point_text_first {
+    top: 46px;
+    left: 99px;
+    width: 160px;
+}
+
+.first-screen__point_text_second {
+    top: -11px;
+    left: -30px;
+}
+
+.first-screen__point_text_third {
+    top: -24px;
+    right: -43px;
+    width: 160px;
+}
+
+.first-screen__point_text_fourth {
+    top: -23px;
+    right: -120px;
+    width: 160px;
+}
+
+.circle, .circle1, .circle2 {
+	top: 50%;
+	left: 50%;
+	border-radius: 50%;
+	border: 2px solid #c4284e;
+	background-color: #df6921;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	opacity: 0;
+}
+
+.circle {
+    animation: scaleIn 4s infinite cubic-bezier(.42, 0, .58, 1);
+}
+
+.circle1 {
+	animation: scaleIn 4s infinite cubic-bezier(.42, 0, .58, 1);
+}
+
+.circle2 {
+	animation: scaleIn 4s infinite cubic-bezier(.42, 0, .58, 1);
+}
+
+.next-section {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 11%;
+    background: url('../images/bg-next.png');
+    background-size: contain;
+    background-position: center;
+    font-family: 'GothamProRegular', sans-serif;
+    text-align: center;
+}
+
+.next-section__title {
+    padding-left: 27px;
+    padding-top: 14px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 200;
+    letter-spacing: 0.7px;
+    color: #fff;
+}
+
+.next-section__arrow-down {
+    display: inline-block;
+    width: 45px;
+    height: 28px;
+    margin-top: 12px;
+    margin-left: 21px;
+    background: url('../images/arrow-down.png') no-repeat;
+    background-size: 100%;
+}
+
+/* ------------- Второй экран ---------------------*/
+.second-screen {
+    position: relative;
+    background: url('../images/bg-second-screen-ice.png') no-repeat;
+    background-size: contain;
+    background-position: 41px -16px;
+}
+
+.second-screen__title {
+    position: absolute;
+    top: 42.5%;
+    left: 49.5%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-family: 'Gotham-Pro-Regular', sans-serif;
+    font-size: 45px;
+    font-weight: 200;
+    text-align: center;
+    line-height: 1.3em;
+    letter-spacing: 0.1px;
+}
+
+/* ---------------- Параллакс-эффект -------------------*/
+
+/* .parallax {
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 300px;
+}
+
+.parallax__layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.parallax__layer-back {
+    z-index: 3;
+    background: green;
+    transform: translateZ(-300px);
+}
+
+.parallax__layer-base {
+    z-index: 4;
+    transform: translateZ(0)
+} */
+
+/* ---------------- Третий экран --------------*/
+.slider__screen {
+    position: relative;
+    width: 1024px;
+    height: 768px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.slider__screen-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slider__screen-slide {
+    display: inline-block;
+    width: 1024px;
+    height: 768px;
+}
+
+.first-slide {
+    position: relative;
+    background: url('../images/bg-first-slide.png') no-repeat;
+    background-size: contain;
+    color: #fff;
+}
+
+.first-slide__title {
+    position: absolute;
+    top: 15%;
+    left: 8.5%;
+    font-family: 'Gotham-Pro', sans-serif;
+    font-weight: 200;
+    font-size: 26px;
+    letter-spacing: 0.8px;
+}
+
+.first-slide__glycemia {
+    position: absolute;
+    bottom: 30%;
+    left: 40%;
+    padding: 32px 53px;
+    border: 1px solid #fff;
+    font-family: 'Lato-regular', sans-serif;
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.first-slide__beta {
+    position: absolute;
+    top: 26.3%;
+    left: 48%;
+    font-family: 'Lato-Regular', sans-serif;
+    text-align: center;
+}
+
+.first-slide__beta-number, .first-slide__liver-number, .first-slide__muscle-number {
+    font-size: 34px;
+}
+
+.first-slide__beta-number {
+    padding-right: 9px;
+    margin-top: -2px;
+}
+
+.first-slide__beta-caption, .first-slide__liver-caption, .first-slide__muscle-caption {
+    font-size: 22px;
+}
+
+.first-slide__liver-caption, .first-slide__muscle-caption {
+    letter-spacing: 1px;
+}
+
+.first-slide__liver-caption {
+    margin-right: 3px;
+}
+
+.first-slide__beta-icon, .first-slide__liver-icon, .first-slide__muscle-icon {
+    width: 83px;
+    height: 83px;
+    border-radius: 50%;
+    background-color: #3f437f;
+    background-repeat: no-repeat;
+}
+
+.first-slide__beta-icon {
+    font-size: 74px;
+    margin-top: 13px;
+    border-radius: 50%;
+    line-height: 1em;
+}
+
+.first-slide__muscle {
+    position: absolute;
+    top: 47%;
+    left: 24.6%;
+    text-align: center;
+    font-family: 'Lato-Regular', sans-serif;
+}
+
+.first-slide__muscle-icon {
+    margin-top: 15px;
+    margin-left: -4px;
+    background-image: url('../images/icon_muscle.png');
+    background-size: 79%;
+    background-position: 44% 44%;
+}
+
+.first-slide__liver {
+    position: absolute;
+    top: 47%;
+    right: 19.5%;
+    text-align: center;
+    font-family: 'Lato-Regular', sans-serif;
+}
+
+.first-slide__liver-number {
+    margin-right: 17px;
+}
+
+.first-slide__liver-icon {
+    margin-top: 15px;
+    margin-right: -4px;
+    margin-left: 1px;
+    background-image: url('../images/icon_liver.png');
+    background-size: 69%;
+    background-position: 70% 62%;
+}
+
+.second-slide {
+    position: relative;
+    background: url('../images/bg-second-slide.png') no-repeat;
+    background-size: contain;
+    color: #fff;
+}
+
+.second-slide>* {
+    position: absolute;
+    font-family: 'Lato-Regular', sans-serif;
+}
+
+.second-slide__title {
+    top: 14.6%;
+    left: 8%;
+    font-family: 'Gotham-Pro', sans-serif;
+    font-weight: 200;
+    font-size: 28px;
+    letter-spacing: 2.5px;
+}
+
+
+.second-slide__glycemia {
+    top: 40.6%;
+    left: 31.7%;
+    font-size: 23px;
+    font-weight: 200;
+    border: 1px solid #fff;
+    padding: 54px 106px 58px 110px;
+    letter-spacing: 0.3px;
+}
+
+.second-slide__beta-icon, .second-slide__inkret-icon, .second-slide__alpha-icon, .second-slide__fat-icon,
+.second-slide__muscle-icon, .second-slide__liver-icon, .second-slide__brain-icon, .second-slide__kidneys-icon {
+    background-color: #3f437f;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+}
+
+.second-slide__fat-icon {
+    background-image: url('../images/icon_fat.png');
+}
+
+.second-slide__muscle-icon {
+    background-image: url('../images/icon_muscle.png');
+}
+
+.second-slide__liver-icon {
+    background-image: url('../images/icon_liver.png');
+}
+
+.second-slide__brain-icon {
+    background-image: url('../images/icon_brain.png');
+}
+
+.second-slide__kidneys-icon {
+    background-image: url('../images/icon_kidney.png');
+}
+
+.third-slide {
+    position: relative;
+    background: url('../images/bg-third-slide.png') no-repeat;
+    background-size: contain;
+}
+
+/* ---------------- Пагинация --------------*/
+.pagination {
+    position: fixed;
+    right: 20px;
+    top: 45%;
+    width: 28px;
+    height: 68px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.pagination__page {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+.pagination__page_active {
+    background-color: #f78b1f;
+}
+
+.element_hidden {
+    visibility: hidden;
+}

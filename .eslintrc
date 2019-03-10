@@ -1,0 +1,44 @@
+{
+  "parser": "babel-eslint",
+  "plugins": [
+    "react"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 8,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "globals": {
+    "process": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "strict": 0,
+    "semi": ["error", "always"],
+    "one-var": [1, {
+      "var": "always",
+      "let": "always"
+    }],
+    "camelcase": ["error", {
+      "properties": "never"
+    }],
+    "no-console": ["warn", { "allow": [ "log", "warn", "error", "info", "debug", "groupCollapsed", "groupEnd"] }],
+    "no-unused-vars": ["warn", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
+    "react/prop-types": 1
+  }
+}
