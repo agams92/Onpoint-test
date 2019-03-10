@@ -149,15 +149,27 @@ class FooterContainer extends React.Component {
             }
             if (secondSlidePointsNumbers[point.name]) {
                 const number = secondSlidePointsNumbers[point.name];
-                secondSlidePoints.push(
-                    <SlidePoint 
-                        slide='second' 
-                        name={name} 
-                        caption={caption} 
-                        icon={icon} 
-                        number ={number}
-                    />
-                );
+                if (name === 'inkret' || name === 'alpha') {
+                    secondSlidePoints.push(
+                        <SlidePoint 
+                            slide='second' 
+                            name={name} 
+                            caption={caption} 
+                            icon={icon} 
+                            number={''}
+                        />
+                    );
+                } else {
+                    secondSlidePoints.push(
+                        <SlidePoint 
+                            slide='second' 
+                            name={name} 
+                            caption={caption} 
+                            icon={icon} 
+                            number ={number}
+                        />
+                    );
+                }
             }if (thirdSlidePointsNumbers[point.name]) {
                 const number = thirdSlidePointsNumbers[point.name];
                 thirdSlidePoints.push(
