@@ -1,5 +1,6 @@
 import React from 'react';
 import Footer from './Footer';
+import SlidePoint from './SlidePoint';
 
 class FooterContainer extends React.Component {
     constructor(props) {
@@ -130,60 +131,40 @@ class FooterContainer extends React.Component {
             infection: 9,
             stomach: 10,
             kidneys: 11,
-            glukagon: 12
+            glukagon: 12, 
+            amilin: 13
         };
         const firstSlidePoints =[], secondSlidePoints = [], thirdSlidePoints =[];
+
+        function fillSlidesWithPoints (slideNumber, name, caption, number, icon) {
+            const slide = slideNumber === 'first' ? firstSlidePoints : slideNumber === 'second' ? secondSlidePoints : thirdSlidePoints;
+            slide.push(
+                <SlidePoint 
+                    slide={slideNumber} 
+                    name={name} 
+                    caption={caption} 
+                    icon={icon} 
+                    number={number}
+                />
+            );
+        }
+
         slidePoints.forEach(point => {
             const {name, caption, icon} = point;
             if (firstSlidePointsNumbers[point.name]) {
                 const number = firstSlidePointsNumbers[point.name];
-                firstSlidePoints.push(
-                    <SlidePoint 
-                        slide='first' 
-                        name={name} 
-                        caption={caption} 
-                        icon={icon} 
-                        number ={number}
-                    />
-                );
+                fillSlidesWithPoints('first', name, caption, number, icon);
             }
             if (secondSlidePointsNumbers[point.name]) {
                 const number = secondSlidePointsNumbers[point.name];
-                if (name === 'inkret' || name === 'alpha') {
-                    secondSlidePoints.push(
-                        <SlidePoint 
-                            slide='second' 
-                            name={name} 
-                            caption={caption} 
-                            icon={icon} 
-                            number={''}
-                        />
-                    );
-                } else {
-                    secondSlidePoints.push(
-                        <SlidePoint 
-                            slide='second' 
-                            name={name} 
-                            caption={caption} 
-                            icon={icon} 
-                            number ={number}
-                        />
-                    );
-                }
-            }if (thirdSlidePointsNumbers[point.name]) {
+                fillSlidesWithPoints('second', name, caption, number, icon);
+            }
+            if (thirdSlidePointsNumbers[point.name]) {
                 const number = thirdSlidePointsNumbers[point.name];
-                thirdSlidePoints.push(
-                    <SlidePoint 
-                        slide='third' 
-                        name={name} 
-                        caption={caption} 
-                        icon={icon} 
-                        number ={number}
-                    />
-                );
-            } 
-            
+                fillSlidesWithPoints('third', name, caption, number, icon);
+            }
         });
+
         return(
             <Footer goToNextSlide={this.goToNextSlide} goToPrevSlide={this.goToPrevSlide} translateValue={this.state.translateValue} >
                 <div className='slider__screen-slide first-slide'>
@@ -200,25 +181,13 @@ class FooterContainer extends React.Component {
                     <h2 className='third-slide__title'>Звенья патогенеза СД2</h2>
                     <p className='third-slide__glycemia'>Гипергликемия</p>
                     <div className='third-slide__table'>
-                        <h3 className='third-slide__table-title'>Инсулинорезистентость</h3>
-                        {thirdSlidePoints}
+                        <h3 className='third-slide__table-title'>Инсулинорезистентность</h3>
                     </div>
-                    
+                    {thirdSlidePoints}
                 </div>
             </Footer>
         );
     }
-}
-
-function SlidePoint({slide, name, caption, icon, number}) {
-    const template = `${slide}-slide__${name}`;
-    return (
-        <div className={`${template}`}>
-            <p className={`${template}-number`}>{number}</p> 
-            <p className={`${template}-caption`}>{caption}</p>
-            <p className={`${template}-icon`}>{icon}</p>
-        </div>
-    );
 }
 
 export default FooterContainer;

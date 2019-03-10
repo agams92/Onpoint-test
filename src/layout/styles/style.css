@@ -227,7 +227,8 @@ html, body {
     transform: translateZ(0)
 } */
 
-/* ---------------- Третий экран --------------*/
+/* -------------------------------- Третий экран ------------------------------------*/
+/* ------ Окно слайдера ----- */
 .slider__screen {
     position: relative;
     width: 1024px;
@@ -247,6 +248,8 @@ html, body {
     width: 1024px;
     height: 768px;
 }
+
+/* ------------ Первый слайд --------- */
 
 .first-slide {
     position: relative;
@@ -357,6 +360,8 @@ html, body {
     background-position: 70% 62%;
 }
 
+/* ----------------------------- Второй слайд ------------------------- */
+
 .second-slide {
     position: relative;
     background: url('../images/bg-second-slide.png') no-repeat;
@@ -371,26 +376,6 @@ html, body {
     background-color: #3f437f;
     background-repeat: no-repeat;
     border-radius: 50%;
-}
-
-.second-slide__fat-icon {
-    background-image: url('../images/icon_fat.png');
-}
-
-.second-slide__muscle-icon {
-    background-image: url('../images/icon_muscle.png');
-}
-
-.second-slide__liver-icon {
-    background-image: url('../images/icon_liver.png');
-}
-
-.second-slide__brain-icon {
-    background-image: url('../images/icon_brain.png');
-}
-
-.second-slide__kidneys-icon {
-    background-image: url('../images/icon_kidney.png');
 }
 
 .second-slide>* {
@@ -419,6 +404,8 @@ html, body {
 }
 
 .second-slide__beta {
+    display: flex;
+    flex-direction: column;
     top: 20%;
     left: 47.7%;
     text-align: center;
@@ -437,7 +424,8 @@ html, body {
 }
 
 .second-slide__beta-icon {
-    position: absolute;
+    margin-top: 10px;
+    margin-left: 6px;
     top: 64px;
     left: 7px;
     font-size: 63px;
@@ -448,6 +436,7 @@ html, body {
     display: inline-block;
 }
 .second-slide__inkret {
+    display: flex;
     top: 28.5%;
     left: 15.8%;
 }
@@ -463,7 +452,6 @@ html, body {
 }
 
 .second-slide__inkret-icon {
-    position: absolute;
     margin-left: 11px;
     font-size: 35px;
     text-align: center;
@@ -473,8 +461,10 @@ html, body {
 }
 
 .second-slide__alpha {
+    display: flex;
+    flex-direction: row-reverse;
     top: 28.4%;
-    right: 21.5%
+    right: 21.6%
 }
 
 .second-slide__alpha-caption {
@@ -485,8 +475,7 @@ html, body {
 }
 
 .second-slide__alpha-icon {
-    position: absolute;
-    left: -94%;
+    margin-right: 14px;
     font-size: 36px;
     text-align: center;
     line-height: 1.5em;
@@ -512,6 +501,7 @@ html, body {
     position: absolute;
     top: -4%;
     left: -94%;
+    background-image: url('../images/icon_fat.png');
     background-size: 79%;
     background-position: 50% 50%;
 }
@@ -538,11 +528,12 @@ html, body {
 }
 
 .second-slide__muscle-icon {
-    order: 1;
-    background-size: 97%;
-    background-position: 2px 11px;
     margin-top: 5px;
     margin-left: 5px;
+    order: 1;
+    background-image: url('../images/icon_muscle.png');
+    background-size: 97%;
+    background-position: 2px 11px;
 }
 
 .second-slide__liver {
@@ -566,11 +557,12 @@ html, body {
 }
 
 .second-slide__liver-icon {
-    order: 1;
-    background-size:82%;
-    background-position: 3px 10px;
     margin-top: 5px;
     margin-left: 5px;
+    order: 1;
+    background-image: url('../images/icon_liver.png');
+    background-size:82%;
+    background-position: 3px 10px;
 }
 
 .second-slide__brain {
@@ -598,11 +590,12 @@ html, body {
 }
 
 .second-slide__brain-icon {
-    order: 1;
-    background-size: 76%;
-    background-position: 10px 7px;
     margin-top: 5px;
     margin-left: 5px;
+    order: 1;
+    background-image: url('../images/icon_brain.png');
+    background-size: 76%;
+    background-position: 10px 7px;
 }
 
 .second-slide__kidneys {
@@ -627,18 +620,83 @@ html, body {
     position: absolute;
     top: -13px;
     right: -79px;
+    background-image: url('../images/icon_kidney.png');
     background-size: 70%;
     background-position: 3px 5px;
     margin-top: 5px;
     margin-left: 5px;
 }
 
+/* -------------- Третий слайд ---------------- */
 
 
 .third-slide {
     position: relative;
     background: url('../images/bg-third-slide.png') no-repeat;
     background-size: contain;
+    color: #fff;
+    font-family: 'Lato-Regular', sans-serif;
+    font-weight: 100;
+}
+
+.third-slide>* {
+    position: absolute;
+}
+
+.third-slide__fat-icon, .third-slide__muscle-icon, .third-slide__bowels-icon, .third-slide__infection-icon,
+.third-slide__liver-icon, .third-slide__brain-icon, .third-slide__kidneys-icon, .third-slide__stomach-icon {
+    width: 60px;
+    height: 60px;
+    background-color: #3f437f;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+}
+
+.third-slide__title {
+    top: 14.6%;
+    left: 8.6%;
+    font-size: 29px;
+    font-family: 'Gotham-Pro-Regular', sans-serif;
+    font-weight: 100;
+    letter-spacing: 2px;
+}
+
+.third-slide__beta {
+    display: flex;
+    top: 18.3%;
+    left: 43.6%;
+}
+
+.third-slide__beta>* {
+    display: inline-block;
+}
+
+.third-slide__beta-number {
+    font-size: 36px;
+}
+
+.third-slide__beta-caption {
+    margin-left: 16px;
+    padding-top: 7px;
+    font-size: 25px;
+}
+
+.third-slide__beta-icon {
+    position: absolute;
+    top: 95%;
+    left: 32%;
+    width: 81px;
+    height: 81px;
+    text-align: center;
+    font-size: 68px;
+    line-height: 1.1em;
+    background-color: #3f437f;
+    border-radius: 50%;
+}
+
+.third-slide__inkret {
+    left: 50%;
+    top: 50%;
 }
 
 /* ---------------- Пагинация --------------*/
