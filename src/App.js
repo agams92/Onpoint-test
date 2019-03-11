@@ -61,7 +61,7 @@ class App extends React.Component {
 			<div className='app' onTouchStart={this.handleTouchStart} onTouchEnd={this.handleTouchEnd} >
 				<HeaderContainter />
 				<NextBlock activePageIndex={this.state.activePageIndex} />
-				<MainContainer />
+				<MainContainer activePageIndex={this.state.activePageIndex} />
 				<FooterContainer />
 				<Pagination activePageIndex={this.state.activePageIndex} />
 			</div>  
