@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function SlidePoint({slide, name, caption, icon, number}) {
     const template = `${slide}-slide__${name}`;
@@ -6,6 +7,7 @@ function SlidePoint({slide, name, caption, icon, number}) {
         captionTag = <p className={`${template}-caption`}>{caption}</p>,
         iconTag = <p className={`${template}-icon`}>{icon}</p>;
 
+    // В зависимости от слайда и пункта убирается или меняется тэг с номером, описанием или иконкой
     if (slide === 'second' && (name === 'inkret' || name === 'alpha')) {
         numberTag = null;
     }
@@ -36,5 +38,16 @@ function SlidePoint({slide, name, caption, icon, number}) {
         </div>
     );
 }
+
+SlidePoint.propTypes = {
+    slide: PropTypes.string,
+    name: PropTypes.string,
+    caption: PropTypes.string,
+    icon: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.bool
+    ]),
+    number: PropTypes.number
+};
 
 export default SlidePoint;

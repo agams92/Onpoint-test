@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Footer from './Footer';
 import SlidePoint from './SlidePoint';
 
@@ -14,11 +13,13 @@ class FooterContainer extends React.Component {
     }
 
     goToSlide(slideIndex) {
-        const newTranslateValue = slideIndex === 0 ? 0 : slideIndex === 1 ? -1024 : -2048;
+        const newTranslateValue = slideIndex === 0 ? 0 : 
+                                  slideIndex === 1 ? -1024 : -2048;
         this.setState({translateValue: newTranslateValue, currentSlideIndex: slideIndex});
     }
 
     render() {
+        // Массив со всеми пунктами, которые используются в слайдах
         const slidePoints = [
             {
                 name: 'beta',
@@ -86,6 +87,8 @@ class FooterContainer extends React.Component {
                 icon: null
             }
         ];
+
+        // Массивы с номерами для всех пунктов, разбитых по слайдам
         const firstSlidePointsNumbers = {
             beta: 1, 
             muscle: 2, 
@@ -116,10 +119,14 @@ class FooterContainer extends React.Component {
             glukagon: 12, 
             amilin: 13
         };
+        
         const firstSlidePoints =[], secondSlidePoints = [], thirdSlidePoints =[];
 
+        // Вспомогательная функция, добавляет в выбранный массив слайда реактовский компонент с пунктом, 
+        // который должен быть на слайде
         function fillSlidesWithPoints (slideNumber, name, caption, number, icon) {
-            const slide = slideNumber === 'first' ? firstSlidePoints : slideNumber === 'second' ? secondSlidePoints : thirdSlidePoints;
+            const slide = slideNumber === 'first' ? firstSlidePoints : 
+                          slideNumber === 'second' ? secondSlidePoints : thirdSlidePoints;
             slide.push(
                 <SlidePoint 
                     slide={slideNumber} 
@@ -149,7 +156,9 @@ class FooterContainer extends React.Component {
         });
 
         return(
-            <Footer goToSlide={this.goToSlide} currentSlideIndex={this.state.currentSlideIndex} translateValue={this.state.translateValue} >
+            <Footer goToSlide={this.goToSlide} 
+                    currentSlideIndex={this.state.currentSlideIndex} 
+                    translateValue={this.state.translateValue} >
                 <div className='slider__screen-slide first-slide'>
                     <h2 className='first-slide__title'>Звенья патогенеза СД2</h2>
                     <p className='first-slide__glycemia'>Гипергликемия</p>

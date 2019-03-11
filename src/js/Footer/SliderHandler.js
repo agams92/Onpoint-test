@@ -1,6 +1,5 @@
 import React from 'react';
-import { th } from 'date-fns/esm/locale';
-
+import PropTypes from 'prop-types';
 class SliderHandler extends React.Component {
     constructor(props) {
         super(props);
@@ -25,14 +24,20 @@ class SliderHandler extends React.Component {
         const touchPoint = event.nativeEvent.changedTouches[0].screenX;
         const type = event.nativeEvent.type;
 
+        // Если тач-событие происходит за пределами слайдера (с поправкой в 14 пикселей ради корректного 
+        // отображения кнопки слайдера), то метод ничего не делает
         if (touchPoint < this.state.sliderStart || touchPoint > this.state.sliderEnd - 14) return;
 
+        // Вычисление нового значения для сдвига кнопки слайдера (с поправкой в 11 пикселей для отображения кнопки 
+        // в месте касания)
         const newTranslateValue = touchPoint - this.state.sliderStart - 11;
 
+        // Определение, где на слайдере находится кнопка
         const handlerInTheMiddle = newTranslateValue > this.oneThird && newTranslateValue < this.twoThird;
         const handlerInTheBeginning = newTranslateValue < this.oneThird;
         const handlerInTheEnd = newTranslateValue > this.twoThird;
 
+        // Конец слайдера, чтобы можно было его сочетать со значением сдвига (и поправка с учетом 14 и 11 пикселей)
         const sliderEndPoint = this.middlePoint * 2 - 25;
 
         if (type === 'touchmove') {
@@ -79,5 +84,10 @@ class SliderHandler extends React.Component {
         );
     }
 }
+
+SliderHandler.propTypes = {
+    goToSlide: PropTypes.func, 
+    currentSlideIndex: PropTypes.number
+};
 
 export default SliderHandler;

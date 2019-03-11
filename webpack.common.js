@@ -35,8 +35,9 @@ module.exports = {
                       loader: 'image-webpack-loader',
                       options: {
                         pngquant: {
-                          quality: '65-90',
-                          speed: 4
+                          quality: '60-80',
+                          speed: 6,
+                          strip: true,
                         },
                       },
                     },

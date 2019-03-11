@@ -57,15 +57,15 @@ class App extends React.Component {
 	}
 
     render() {
-			return (
-				<div className='app' onTouchStart={this.handleTouchStart} onTouchEnd={this.handleTouchEnd} >
-					<HeaderContainter changePage={this.changeActivePage} />
-					<NextBlock activePageIndex={this.state.activePageIndex} />
-					<MainContainer changePage={this.changeActivePage} />
-					<FooterContainer />
-					<Pagination activePageIndex={this.state.activePageIndex} />
-				</div>
-			);
+		return (
+			<div className='app' onTouchStart={this.handleTouchStart} onTouchEnd={this.handleTouchEnd} >
+				<HeaderContainter />
+				<NextBlock activePageIndex={this.state.activePageIndex} />
+				<MainContainer />
+				<FooterContainer />
+				<Pagination activePageIndex={this.state.activePageIndex} />
+			</div>  
+		);
 	}
 }
 
