@@ -21,7 +21,7 @@ class SliderHandler extends React.Component {
 
     handleTouch(event) {
         const {goToSlide, currentSlideIndex} = this.props;
-        const touchPoint = event.nativeEvent.changedTouches[0].screenX;
+        const touchPoint = event.nativeEvent.changedTouches[0].clientX;
         const type = event.nativeEvent.type;
 
         // Если тач-событие происходит за пределами слайдера (с поправкой в 14 пикселей ради корректного 
