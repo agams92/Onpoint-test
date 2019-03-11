@@ -22,10 +22,18 @@ class App extends React.Component {
 	}
 
 	handleTouchStart(event) {
+        const touchObjects = event.nativeEvent.targetTouches;
+        const sliderHandler = document.querySelector('.slider-handler__handle');
+		if (touchObjects[0].target === sliderHandler) {
+            this.sliderTouched = true;
+        } else {
+            this.sliderTouched = false;
+        }
 		this.touchStartPoint = event.nativeEvent.changedTouches[0].screenY;
 	}
 
 	handleTouchEnd(event) {
+        if (this.sliderTouched) return;
 		const touchEndPoint = event.nativeEvent.changedTouches[0].screenY;
 		const direction = this.touchStartPoint - touchEndPoint;
 		const currentPage = this.state.activePageIndex;
@@ -49,15 +57,15 @@ class App extends React.Component {
 	}
 
     render() {
-		return (
-			<div className='app' onTouchStart={this.handleTouchStart} onTouchEnd={this.handleTouchEnd} >
-				<HeaderContainter changePage={this.changeActivePage} />
-				<NextBlock activePageIndex={this.state.activePageIndex} />
-				<MainContainer changePage={this.changeActivePage} />
-				<FooterContainer />
-				<Pagination activePageIndex={this.state.activePageIndex} />
-			</div>
-		);
+			return (
+				<div className='app' onTouchStart={this.handleTouchStart} onTouchEnd={this.handleTouchEnd} >
+					<HeaderContainter changePage={this.changeActivePage} />
+					<NextBlock activePageIndex={this.state.activePageIndex} />
+					<MainContainer changePage={this.changeActivePage} />
+					<FooterContainer />
+					<Pagination activePageIndex={this.state.activePageIndex} />
+				</div>
+			);
 	}
 }
 

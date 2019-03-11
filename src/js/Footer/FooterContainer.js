@@ -1,39 +1,21 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import Footer from './Footer';
 import SlidePoint from './SlidePoint';
 
 class FooterContainer extends React.Component {
     constructor(props) {
         super(props);
-        this.goToNextSlide = this.goToNextSlide.bind(this);
-        this.goToPrevSlide = this.goToPrevSlide.bind(this);
+        this.goToSlide = this.goToSlide.bind(this);
         this.state = {
-            currentIndex: 0,
+            currentSlideIndex: 0,
             translateValue: 0
         };
     }
 
-    goToPrevSlide() {
-        console.log(1);
-        if(this.state.currentIndex === 0)
-          return;
-        
-        this.setState(prevState => ({
-          currentIndex: prevState.currentIndex - 1,
-          translateValue: prevState.translateValue + 1024
-        }));
-    }
-
-    goToNextSlide () {
-        console.log(2);
-        if(this.state.currentIndex === 2) {
-          return;
-        }
-
-        this.setState(prevState => ({
-          currentIndex: prevState.currentIndex + 1,
-          translateValue: prevState.translateValue - 1024
-        }));
+    goToSlide(slideIndex) {
+        const newTranslateValue = slideIndex === 0 ? 0 : slideIndex === 1 ? -1024 : -2048;
+        this.setState({translateValue: newTranslateValue, currentSlideIndex: slideIndex});
     }
 
     render() {
@@ -145,6 +127,7 @@ class FooterContainer extends React.Component {
                     caption={caption} 
                     icon={icon} 
                     number={number}
+                    key={number}
                 />
             );
         }
@@ -166,7 +149,7 @@ class FooterContainer extends React.Component {
         });
 
         return(
-            <Footer goToNextSlide={this.goToNextSlide} goToPrevSlide={this.goToPrevSlide} translateValue={this.state.translateValue} >
+            <Footer goToSlide={this.goToSlide} currentSlideIndex={this.state.currentSlideIndex} translateValue={this.state.translateValue} >
                 <div className='slider__screen-slide first-slide'>
                     <h2 className='first-slide__title'>Звенья патогенеза СД2</h2>
                     <p className='first-slide__glycemia'>Гипергликемия</p>

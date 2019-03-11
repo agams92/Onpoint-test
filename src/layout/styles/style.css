@@ -228,6 +228,10 @@ html, body {
 } */
 
 /* -------------------------------- Третий экран ------------------------------------*/
+.third-screen {
+    position: relative;
+}
+
 /* ------ Окно слайдера ----- */
 .slider__screen {
     position: relative;
@@ -643,6 +647,41 @@ html, body {
     position: absolute;
 }
 
+.third-slide__title {
+    top: 14.6%;
+    left: 8.6%;
+    font-size: 29px;
+    font-family: 'Gotham-Pro-Regular', sans-serif;
+    font-weight: 100;
+    letter-spacing: 2px;
+}
+
+.third-slide__glycemia {
+    top: 63.8%;
+    left: 42.8%;
+    font-size: 22px;
+    letter-spacing: 1.3px;
+}
+
+.third-slide__table {
+    top: 43%;
+    right: 5.7%;
+    width: 258px;
+    height: 300px;
+    background: linear-gradient(to bottom, #2b306f 5%, rgba(22,22,22,0) 77%), 
+                linear-gradient(to bottom, #0a123c 30%, rgba(22,22,22,0) 62%);
+    border-radius: 18%;
+}
+
+.third-slide__table-title {
+    margin-top: 21px;
+    margin-left: 41px;
+    font-size: 14px;
+    font-weight: 100;
+    letter-spacing: 0.5px;
+}
+
+
 .third-slide__fat-icon, .third-slide__muscle-icon, .third-slide__bowels-icon, .third-slide__infection-icon,
 .third-slide__liver-icon, .third-slide__brain-icon, .third-slide__kidneys-icon, .third-slide__stomach-icon {
     width: 60px;
@@ -652,13 +691,10 @@ html, body {
     border-radius: 50%;
 }
 
-.third-slide__title {
-    top: 14.6%;
-    left: 8.6%;
-    font-size: 29px;
-    font-family: 'Gotham-Pro-Regular', sans-serif;
-    font-weight: 100;
-    letter-spacing: 2px;
+.third-slide__fat-number, .third-slide__alpha-number, .third-slide__beta-number, .third-slide__bowels-number, .third-slide__brain-number,
+.third-slide__infection-number, .third-slide__inkret-number, .third-slide__kidneys-number, .third-slide__liver-number, .third-slide__muscle-number,
+.third-slide__stomach-number {
+    font-size: 36px;
 }
 
 .third-slide__beta {
@@ -669,10 +705,6 @@ html, body {
 
 .third-slide__beta>* {
     display: inline-block;
-}
-
-.third-slide__beta-number {
-    font-size: 36px;
 }
 
 .third-slide__beta-caption {
@@ -695,9 +727,293 @@ html, body {
 }
 
 .third-slide__inkret {
-    left: 50%;
-    top: 50%;
+    left: 34.2%;
+    top: 44%;
+    text-align: right;
+    width: 164px;
 }
+
+.third-slide__inkret-caption {
+    margin-top: -7px;
+    font-size: 18px;
+    white-space: normal;
+    line-height: 1.3em;
+    letter-spacing: 0.9px;
+}
+
+.third-slide__inkret-caption i {
+    margin-right: 8px;
+    font-size: 20px;
+}
+
+.third-slide__alpha {
+    left: 53.5%;
+    top: 44%;
+    text-align: left;
+    width: 164px;
+}
+
+.third-slide__alpha-caption {
+    margin-top: -3px;
+    font-size: 18px;
+    white-space: normal;
+    line-height: 1.3em;
+    letter-spacing: 1.1px;
+}
+
+.third-slide__glukagon {
+    top: 56.1%;
+    left: 53.6%;
+}
+
+.third-slide__glukagon-caption {
+    font-size: 13px;
+    letter-spacing: 1.1px;
+}
+
+.third-slide__glukagon-caption i {
+    margin-right: 4px;
+    font-size: 15px;
+}
+
+.third-slide__amilin {
+    top: 53.8%;
+    left: 27%;
+}
+
+.third-slide__amilin-caption {
+    font-size: 13px;
+    letter-spacing: 1.1px;
+}
+
+.third-slide__amilin-caption i {
+    margin-right: 4px;
+    font-size: 15px;
+}
+
+.third-slide__brain {
+    top: 29.7%;
+    right: 9.5%;
+}
+
+.third-slide__brain-caption {
+    font-size: 18px;
+    margin-top: -6px;
+    letter-spacing: 0.8px;
+}
+
+.third-slide__brain-icon {
+    position: absolute;
+    top: 10%;
+    left: -60%;
+    background-image: url('../images/icon_brain.png');
+    background-size: 77%;
+    background-position: 60% 50%;
+}
+
+.third-slide__liver {
+    top: 49.7%;
+    right: 15.5%;
+}
+
+.third-slide__liver-caption {
+    font-size: 18px;
+    letter-spacing: 1.5px;
+}
+
+.third-slide__liver-icon {
+    position: absolute;
+    top: 10%;
+    left: -109%;
+    background-image: url('../images/icon_liver.png');
+    background-size: 83%;
+    background-position: 62% 107%;
+}
+
+.third-slide__muscle {
+    top: 60.7%;
+    right: 15.2%;
+}
+
+.third-slide__muscle-caption {
+    font-size: 18px;
+    letter-spacing: 1.5px;
+}
+
+.third-slide__muscle-icon {
+    position: absolute;
+    top: 10%;
+    left: -103%;
+    background-image: url('../images/icon_muscle.png');
+    background-size: 95%;
+    background-position: 62% 54%;
+}
+
+.third-slide__fat {
+    top: 71.5%;
+    right: 6.7%;
+}
+
+.third-slide__fat-caption {
+    font-size: 18px;
+    letter-spacing: 1.5px;
+}
+
+.third-slide__fat-icon {
+    position: absolute;
+    top: 13%;
+    left: -46%;
+    background-image: url('../images/icon_fat.png');
+    background-size: 78%;
+    background-position: 51% 61%;
+}
+
+.third-slide__bowels {
+    top: 28.5%;
+    left: 10.7%;
+    width: 158px;
+    text-align: right;
+}
+
+.third-slide__bowels-caption {
+    margin-top: -4px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    white-space: normal;
+    line-height: 1.3em;
+}
+
+.third-slide__bowels-icon {
+    position: absolute;
+    top: 19%;
+    right: -44%;
+    background-image: url('../images/icon_bowels.png');
+    background-size: 70%;
+    background-position: 46% 61%;
+}
+
+.third-slide__infection {
+    top: 40.5%;
+    left: 4.7%;
+    width: 220px;
+    text-align: right;
+}
+
+.third-slide__infection-caption {
+    margin-top: -4px;
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    white-space: normal;
+    line-height: 1.3em;
+}
+
+.third-slide__infection-icon {
+    position: absolute;
+    top: 17%;
+    right: -32%;
+    background-image: url('../images/icon_infection.png');
+    background-size: 81%;
+    background-position: 32% 49%;
+}
+
+.third-slide__stomach {
+    top: 59.5%;
+    left: 17.5%;
+    text-align: right;
+}
+
+.third-slide__stomach-caption {
+    margin-top: -7px;
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    white-space: normal;
+    line-height: 1.3em;
+}
+
+.third-slide__stomach-icon {
+    position: absolute;
+    top: 20%;
+    right: -85%;
+    background-image: url('../images/icon_stomach.png');
+    background-size: 68%;
+    background-position: 35% 44%;
+}
+
+.third-slide__kidneys {
+    top: 72.5%;
+    left: 42.5%;
+    text-align: right;
+}
+
+.third-slide__kidneys-caption {
+    margin-top: -7px;
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    white-space: normal;
+    line-height: 1.3em;
+}
+
+.third-slide__kidneys-icon {
+    position: absolute;
+    top: -1%;
+    right: -119%;
+    background-image: url('../images/icon_kidney.png');
+    background-size: 72%;
+    background-position: 18% 27%;
+}
+
+/* ---- Управление слайдами ------ */
+.slider-handler {
+    position: absolute;
+    bottom: 9.5%;
+    left: 19.2%;
+    width: 646px;
+    height: 12px;
+    background-color: #435063;
+    touch-action: none;
+}
+
+.slider-handler__handle {
+    position: absolute;
+    width: 45px;
+    height: 70px;
+    top: -23px;
+    left: -6px;
+    background: url('../images/icon_slider-handler_start.png') no-repeat;
+    background-size: 100%;
+    background-position: 8% 8%;
+    touch-action: pan-x;
+    transition: transform ease 0.1s;
+}
+
+.slider-handler__track-wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden
+}
+
+.slider-handler__track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-646px);
+    transition: transform ease 0.1s;
+    background-color: #d1eaff;
+}
+
+.slider-handler__points-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 26px;
+    color: #fff;
+    font-family: 'Gotham-Pro-Regular', sans-serif;
+}
+
+.slider-handler__point {
+    font-size: 20px;
+    font-weight: 100;
+}
+
 
 /* ---------------- Пагинация --------------*/
 .pagination {

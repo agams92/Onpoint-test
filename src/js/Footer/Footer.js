@@ -1,10 +1,11 @@
 import React from 'react';
+import SliderHandler from './SliderHandler';
 
 class Footer extends React.Component {
     render() {
-        const {goToPrevSlide, goToNextSlide, translateValue} = this.props;
+        const {goToSlide, translateValue, currentSlideIndex} = this.props;
         return (
-            <div className='screen thrid-screen'>
+            <div className='screen third-screen'>
                 <div className="slider__screen">
                     <div className="slider__screen-wrapper"
                         style={{
@@ -14,16 +15,7 @@ class Footer extends React.Component {
                         {this.props.children}
                     </div>
                 </div>
-                <div className='slider__handler'
-                    style={{width: '100px', height: '100px', background: 'black', position:'relative', display: 'inline-block'}}
-                    onClick={goToPrevSlide}>
-
-                </div>
-                <div className='slider__handler'
-                    style={{width: '100px', height: '100px', background: 'orange', position:'relative', display: 'inline-block'}}
-                    onClick={goToNextSlide}>
-
-                </div>
+                <SliderHandler goToSlide={goToSlide} currentSlideIndex={currentSlideIndex} />
             </div>
         );
     }

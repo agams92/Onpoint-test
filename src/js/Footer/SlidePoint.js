@@ -14,7 +14,7 @@ function SlidePoint({slide, name, caption, icon, number}) {
         if (name === 'inkret' || name === 'alpha') {
             iconTag = null;
             if (name === 'inkret') {
-                captionTag = <p className={`${template}-caption`}><i className="fas fa-long-arrow-alt-down" />Инкретинового эффекта</p>;
+                captionTag = <p className={`${template}-caption`}><i className="fas fa-long-arrow-alt-down" />инкретинового эффекта</p>;
             }
         }
         if (name === 'glukagon' || name === 'amilin') {
@@ -27,7 +27,7 @@ function SlidePoint({slide, name, caption, icon, number}) {
             }
         }
     }
-    
+
     return (
         <div className={`${template}`}>
             {numberTag}
